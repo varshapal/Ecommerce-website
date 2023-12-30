@@ -1,17 +1,26 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
 import "./App.css";
-import { Container, Navbar } from "react-bootstrap";
 import Products from "./components/Layout/Products";
+import Cart from "./components/Cart/Cart";
+import { Fragment, useState } from "react";
 
 const App = () => {
-  
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  }
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  }
   
   return (
-    <div>
-      <Products />
+    <Fragment>
+      {cartIsShown && <Cart />}
+      <Products onShowCart={showCartHandler}/>
       
-    </div>
+    </Fragment>
   );
 }
 

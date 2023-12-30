@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card, Button, Navbar, Nav} from "react-bootstrap";
-const Products = () => {
+const Products = (props) => {
   const products = [
     {
       title: "Colors",
@@ -39,7 +39,7 @@ const Products = () => {
             <Nav.Link href="#home">STORE</Nav.Link>
             <Nav.Link href="#home">ABOUT</Nav.Link>
           </Nav>
-          <Button variant="outline-info">Cart</Button>
+          <Button variant="outline-info" onClick={props.onShowCart}>Cart</Button>
         </Container>
       </Navbar>
       
